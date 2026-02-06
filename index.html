@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verdict | Web3 Intent Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <!-- Animated Background Orbs -->
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <!-- Grid Pattern Overlay -->
+    <div class="grid-pattern"></div>
+
+    <div class="container mx-auto">
+        <!-- Web3 Header -->
+        <header class="header-glass fade-in mb-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="logo-container">
+                        <div class="logo-glow"></div>
+                        <svg class="logo-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <div class="brand-text">
+                        <h1 class="page-title">Verdict</h1>
+                        <span class="brand-tagline">Web3 Intent Verification</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <!-- Chain Indicator -->
+                    <div class="chain-indicator">
+                        <div class="chain-dot"></div>
+                        <span class="chain-name">Ethereum</span>
+                    </div>
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                        <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <div id="api-status" class="status-badge status-verified">
+                        <span class="status-pulse"></span>
+                        <span>Connected</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Enhanced 3-Step Progress Indicator -->
+        <div id="step-indicator" class="step-indicator fade-in">
+            <div class="step-connector">
+                <div class="connector-fill" id="connector-fill"></div>
+            </div>
+            <div class="step active" id="step-1">
+                <div class="step-number">
+                    <span class="step-num-text">1</span>
+                    <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <span class="step-label">Clarify</span>
+                <div class="step-glow"></div>
+            </div>
+            <div class="step" id="step-2">
+                <div class="step-number">
+                    <span class="step-num-text">2</span>
+                    <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <span class="step-label">Review</span>
+                <div class="step-glow"></div>
+            </div>
+            <div class="step" id="step-3">
+                <div class="step-number">
+                    <span class="step-num-text">3</span>
+                    <svg class="step-check hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <span class="step-label">Confirm</span>
+                <div class="step-glow"></div>
+            </div>
+        </div>
+
+        <!-- Main Card Container - Enhanced Glassmorphism -->
+        <main class="main-card fade-in">
+            <div class="card-glow"></div>
+            <div class="main-card-header">
+                <div class="flex items-center gap-3">
+                    <div class="header-icon-container">
+                        <svg class="header-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="header-title">Intent Verification</span>
+                        <span class="header-subtitle">No action without your approval</span>
+                    </div>
+                </div>
+                <div class="security-badge">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span>Secured</span>
+                </div>
+            </div>
+            
+            <div id="app-container" class="main-card-body">
+                
+                <!-- Step 1: Intent Input - Enhanced -->
+                <section id="intent-input-view" class="fade-in">
+                    <div class="section-header">
+                        <h2 class="section-title">What would you like to do?</h2>
+                        <p class="helper-text">Describe your intended transaction in plain language. We'll verify it's safe before any execution.</p>
+                    </div>
+                    
+                    <div class="input-container">
+                        <div class="input-glow"></div>
+                        <textarea 
+                            id="user-intent" 
+                            rows="4" 
+                            placeholder="Example: Send 0.5 ETH to 0x1234... when the invoice is marked as paid"
+                            class="web3-textarea"
+                        ></textarea>
+                        <div class="input-hint">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span>Be specific about amounts, addresses, and conditions</span>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button onclick="analyzeIntent()" class="btn-primary btn-glow">
+                            <span class="btn-content">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                                Continue to Review
+                            </span>
+                            <div class="btn-shine"></div>
+                        </button>
+                        <button onclick="showExamples()" class="btn-secondary btn-glass">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                            </svg>
+                            Examples
+                        </button>
+                    </div>
+
+                    <!-- Examples Section - Enhanced -->
+                    <div id="examples-section" class="hidden examples-container">
+                        <div class="examples-header">
+                            <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                            <span>Click to use an example:</span>
+                        </div>
+                        <div class="examples-list">
+                            <button onclick="useExample(0)" class="example-card">
+                                <div class="example-icon">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <span>"Release payment to the freelancer once the project is marked as complete."</span>
+                            </button>
+                            <button onclick="useExample(1)" class="example-card">
+                                <div class="example-icon swap-icon">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                    </svg>
+                                </div>
+                                <span>"Swap 1 ETH to USDC on Uniswap at market price."</span>
+                            </button>
+                            <button onclick="useExample(2)" class="example-card">
+                                <div class="example-icon refund-icon">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+                                    </svg>
+                                </div>
+                                <span>"Refund the customer if the item has not shipped within 7 days."</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Loading State - Enhanced Web3 Animation -->
+                <section id="loading-view" class="hidden fade-in loading-container">
+                    <div class="loading-orb">
+                        <div class="loading-ring"></div>
+                        <div class="loading-ring delay-1"></div>
+                        <div class="loading-ring delay-2"></div>
+                        <div class="loading-core"></div>
+                    </div>
+                    <div class="loading-text">
+                        <p class="loading-title">Analyzing transaction</p>
+                        <p class="loading-subtitle">Checking for safety and clarity</p>
+                    </div>
+                    <div class="loading-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </section>
+
+                <!-- Step 2: Clarification Required - Enhanced -->
+                <section id="clarification-view" class="hidden fade-in">
+                    <div class="status-badge status-pending mb-5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Clarification Required</span>
+                    </div>
+
+                    <div class="clarification-section mb-5">
+                        <h3 class="clarification-label">Your request:</h3>
+                        <div class="intent-display-card">
+                            <div class="intent-display-icon">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                                </svg>
+                            </div>
+                            <p id="original-intent-display" class="intent-display-text"></p>
+                        </div>
+                    </div>
+
+                    <div class="clarification-section mb-5">
+                        <h3 class="clarification-label">We need to know:</h3>
+                        <div class="question-card">
+                            <div class="question-indicator"></div>
+                            <p id="clarification-question" class="question-text"></p>
+                        </div>
+                    </div>
+
+                    <div class="input-container mb-5">
+                        <textarea 
+                            id="clarification-answer" 
+                            rows="4" 
+                            placeholder="Provide details here..."
+                            class="web3-textarea"
+                        ></textarea>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button 
+                            id="submit-clarification-btn"
+                            class="btn-primary btn-glow"
+                        >
+                            <span class="btn-content">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                </svg>
+                                Submit Clarification
+                            </span>
+                        </button>
+                        <button 
+                            onclick="resetApp()" 
+                            class="btn-secondary btn-glass"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </section>
+
+            <!-- Step 4: Explanation Clarification - Enhanced -->
+            <section id="explanation-clarification-view" class="hidden fade-in">
+                <div class="status-badge status-pending mb-5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span>Safety Check</span>
+                </div>
+
+                <div class="safety-notice mb-5">
+                    <div class="safety-icon">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <p>We need to understand one more detail to explain this action safely. This helps protect you from unexpected outcomes.</p>
+                </div>
+
+                <!-- Plain English Explanation Status -->
+                <div id="plain-english-explanation-clarification" class="mb-5"></div>
+
+                <div class="clarification-section mb-5">
+                    <h3 class="clarification-label">One quick question:</h3>
+                    <div class="question-card">
+                        <div class="question-indicator"></div>
+                        <p id="explanation-clarification-question" class="question-text"></p>
+                    </div>
+                </div>
+
+                <div class="input-container mb-5">
+                    <textarea 
+                        id="explanation-clarification-answer" 
+                        rows="3" 
+                        placeholder="Type your answer here..."
+                        class="web3-textarea"
+                    ></textarea>
+                </div>
+
+                <div class="action-buttons mb-4">
+                    <button 
+                        onclick="submitExplanationClarification()" 
+                        class="btn-primary btn-glow"
+                    >
+                        <span class="btn-content">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                            Continue
+                        </span>
+                    </button>
+                    <button 
+                        onclick="resetApp()" 
+                        class="btn-secondary btn-glass"
+                    >
+                        Cancel
+                    </button>
+                </div>
+                
+                <!-- Progress Indicator -->
+                <div class="progress-indicator">
+                    <span id="clarification-progress">Step 1 of 2</span>
+                </div>
+            </section>
+
+            <!-- Step 3: Intent Confirmation - Enhanced -->
+            <section id="confirmation-view" class="hidden fade-in">
+                <!-- Intent Verification Header -->
+                <div class="status-badge status-pending mb-5">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Confirm Your Intent</span>
+                </div>
+
+                <!-- Interpreted Intent Display - Enhanced -->
+                <div class="explanation-panel">
+                    <div class="explanation-panel-header">
+                        <div class="explanation-panel-icon">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <span class="explanation-panel-title">We interpreted your intent as:</span>
+                    </div>
+                    <div id="plain-english-explanation" class="explanation-content"></div>
+                </div>
+
+                <!-- Hidden elements for compatibility -->
+                <div class="hidden">
+                    <p id="final-intent-display"></p>
+                    <ul id="risks-list"></ul>
+                    <pre id="json-preview"></pre>
+                </div>
+
+                <!-- Confirmation Notice - Enhanced -->
+                <div class="confirmation-notice mb-5">
+                    <div class="notice-icon">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <p>Is this what you want to do? Confirm to proceed with execution.</p>
+                </div>
+
+                <!-- Confirmation Actions - Enhanced -->
+                <div class="confirmation-actions">
+                    <button 
+                        onclick="executeContract()" 
+                        class="btn-approve btn-glow-green"
+                    >
+                        <span class="btn-content">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Yes, This Is Correct
+                        </span>
+                        <div class="btn-shine"></div>
+                    </button>
+                    <button 
+                        onclick="resetApp()" 
+                        class="btn-reject"
+                    >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                        No, Start Over
+                    </button>
+                </div>
+            </section>
+
+            <!-- Step 5: Execution Status - Enhanced -->
+            <section id="status-view" class="hidden fade-in status-container">
+                <div id="success-status" class="hidden">
+                    <div class="success-icon-container">
+                        <div class="success-rings">
+                            <div class="success-ring"></div>
+                            <div class="success-ring delay-1"></div>
+                        </div>
+                        <div class="success-icon">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="status-title success-text">Transaction Complete</h2>
+                    <p class="status-subtitle">Successfully executed on-chain</p>
+                </div>
+
+                <div id="error-status" class="hidden">
+                    <div class="error-icon-container">
+                        <div class="error-icon">
+                            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="status-title error-text">Transaction Failed</h2>
+                    <p class="status-subtitle" id="error-message"></p>
+                    <p class="status-note">No funds were transferred</p>
+                </div>
+
+                <div class="transaction-details-card">
+                    <div class="details-header">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <span>Transaction details</span>
+                    </div>
+                    <div id="transaction-details" class="details-content"></div>
+                </div>
+
+                <button 
+                    onclick="resetApp()" 
+                    class="btn-primary btn-glow w-full"
+                >
+                    <span class="btn-content">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                        </svg>
+                        New Transaction
+                    </span>
+                </button>
+            </section>
+
+            </div>
+        </main>
+
+        <!-- Enhanced Footer -->
+        <footer class="footer fade-in">
+            <div class="footer-content">
+                <div class="footer-security">
+                    <div class="footer-shield">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </div>
+                    <p>No transaction executes without your explicit approval</p>
+                </div>
+                <div class="footer-brand">
+                    <span>Powered by</span>
+                    <span class="brand-accent">Verdict</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="/main.js"></script>
+    </body>
+</html>
