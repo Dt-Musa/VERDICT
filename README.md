@@ -53,15 +53,39 @@ cd VERDICT
 
 Simply open the `index.html` file in your browser or visit the [live demo](https://dt-musa.github.io/VERDICT/) to start using VERDICT.
 
+## 🔗 Chainlink Alignment (Planned)
+
+Verdict is designed to integrate with Chainlink for:
+- Reliable price feeds
+- External data verification
+- Risk-aware decision inputs
+
+---
+
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Dt-Musa/VERDICT/issues).
+This project is **open for contributions**.
+
+Contributions are welcome in areas such as:
+- Backend architecture and APIs
+- Verdict and risk rule design
+- Smart contract analysis
+- UX and accessibility improvements
+
+Feel free to open an issue or submit a pull request.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+---
+
+## 📊 Status
+
+- Frontend: Stable foundation with ongoing UX improvements  
+- Backend: Under development
 
 ## 📄 License
 
