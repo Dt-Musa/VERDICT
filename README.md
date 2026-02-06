@@ -24,6 +24,13 @@ VERDICT is an intelligent decision and safety engine designed specifically for w
 - **Web3 Integration**: Seamless integration with blockchain interactions
 - **User-Friendly Interface**: Clean and intuitive design
 
+### Backend (In Progress)
+- Intent classification
+- Deterministic verdict rules
+- Risk scoring
+- Transaction and contract analysis
+- API consumed by the frontend
+
 ## 🛠️ Technologies
 
 - **JavaScript**: Core functionality
